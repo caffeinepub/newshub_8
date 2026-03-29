@@ -18,42 +18,47 @@
 
 @layer base {
   :root {
-    --radius: 0.75rem;
-    /* Deep navy dark theme */
-    --background: 0.11 0.035 252;
-    --foreground: 0.94 0.012 245;
-    --card: 0.17 0.04 252;
+    --radius: 1rem;
+
+    /* Deep space background */
+    --background: 0.08 0.025 252;
+    --foreground: 0.96 0.008 245;
+    --card: 0.13 0.03 252;
     --card-foreground: 0.94 0.012 245;
-    --popover: 0.17 0.04 252;
+    --popover: 0.13 0.03 252;
     --popover-foreground: 0.94 0.012 245;
+
     /* Electric blue primary */
-    --primary: 0.62 0.22 258;
+    --primary: 0.6 0.22 258;
     --primary-foreground: 0.98 0.005 245;
-    --secondary: 0.21 0.045 252;
+    --secondary: 0.18 0.04 252;
     --secondary-foreground: 0.94 0.012 245;
-    --muted: 0.19 0.035 252;
-    --muted-foreground: 0.6 0.025 245;
-    /* Vibrant cyan accent */
-    --accent: 0.72 0.18 210;
-    --accent-foreground: 0.1 0.03 252;
+    --muted: 0.16 0.03 252;
+    --muted-foreground: 0.56 0.022 245;
+
+    /* Cyan accent */
+    --accent: 0.7 0.18 210;
+    --accent-foreground: 0.08 0.03 252;
     --destructive: 0.58 0.22 29;
     --destructive-foreground: 0.985 0 0;
-    --border: 0.24 0.045 252;
-    --input: 0.22 0.04 252;
-    --ring: 0.62 0.22 258;
-    /* Brand */
+    --border: 0.22 0.04 252;
+    --input: 0.2 0.035 252;
+    --ring: 0.6 0.22 258;
+
+    /* Brand colors */
     --gold: 0.78 0.16 75;
-    --orange: 0.72 0.19 42;
+    --orange: 0.7 0.2 42;
     --whatsapp: 0.65 0.18 145;
-    /* sidebar */
-    --sidebar: 0.14 0.04 252;
+
+    /* Sidebar */
+    --sidebar: 0.11 0.035 252;
     --sidebar-foreground: 0.94 0.012 245;
-    --sidebar-primary: 0.62 0.22 258;
+    --sidebar-primary: 0.6 0.22 258;
     --sidebar-primary-foreground: 0.98 0.005 245;
-    --sidebar-accent: 0.21 0.045 252;
+    --sidebar-accent: 0.18 0.04 252;
     --sidebar-accent-foreground: 0.94 0.012 245;
-    --sidebar-border: 0.24 0.045 252;
-    --sidebar-ring: 0.62 0.22 258;
+    --sidebar-border: 0.22 0.04 252;
+    --sidebar-ring: 0.6 0.22 258;
     --chart-1: 0.646 0.222 41.116;
     --chart-2: 0.6 0.118 184.704;
     --chart-3: 0.398 0.07 227.392;
@@ -72,6 +77,8 @@
   body {
     @apply bg-background text-foreground;
     font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   h1,
@@ -80,5 +87,67 @@
   h4 {
     font-family: "Bricolage Grotesque", "Plus Jakarta Sans", system-ui,
       sans-serif;
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: oklch(var(--card) / 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid oklch(var(--border) / 0.6);
+  }
+
+  .glass-dark {
+    background: oklch(0.06 0.02 252 / 0.7);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid oklch(var(--border) / 0.4);
+  }
+
+  .glow-blue {
+    box-shadow: 0 0 60px -10px oklch(var(--primary) / 0.5);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 60px -10px oklch(var(--orange) / 0.5);
+  }
+
+  .glow-gold {
+    box-shadow: 0 0 60px -10px oklch(var(--gold) / 0.4);
+  }
+
+  .text-gradient-blue {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(
+      135deg,
+      oklch(0.75 0.2 258),
+      oklch(0.6 0.22 220)
+    );
+  }
+
+  .text-gradient-orange {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(
+      135deg,
+      oklch(0.82 0.18 55),
+      oklch(0.68 0.22 35)
+    );
+  }
+
+  .text-gradient-hero {
+    @apply text-transparent bg-clip-text;
+    background-image: linear-gradient(
+      135deg,
+      oklch(0.9 0.12 258) 0%,
+      oklch(0.72 0.2 210) 50%,
+      oklch(0.82 0.18 55) 100%
+    );
+  }
+
+  .border-gradient-blue {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+    position: relative;
   }
 }
