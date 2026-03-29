@@ -16,6 +16,7 @@ export default {
     },
     extend: {
       fontFamily: {
+        display: ["'Bricolage Grotesque'", "system-ui", "sans-serif"],
         sans: ["'Plus Jakarta Sans'", "Inter", "system-ui", "sans-serif"],
       },
       colors: {
@@ -52,12 +53,10 @@ export default {
           DEFAULT: "oklch(var(--card))",
           foreground: "oklch(var(--card-foreground))",
         },
-        news: {
-          teal: "oklch(var(--news-teal))",
-          header: "oklch(var(--news-header))",
-          card: "oklch(var(--news-card))",
-          "card-border": "oklch(var(--news-card-border))",
-          "badge-red": "oklch(var(--news-badge-red))",
+        brand: {
+          gold: "oklch(var(--gold))",
+          orange: "oklch(var(--orange))",
+          whatsapp: "oklch(var(--whatsapp))",
         },
         chart: {
           1: "oklch(var(--chart-1))",
@@ -84,7 +83,9 @@ export default {
       },
       boxShadow: {
         xs: "0 1px 2px 0 rgba(0,0,0,0.05)",
-        card: "0 4px 24px 0 rgba(0,0,0,0.25)",
+        card: "0 4px 24px 0 rgba(0,0,0,0.35)",
+        glow: "0 0 40px 0 rgba(99,120,255,0.25)",
+        "glow-orange": "0 0 40px 0 rgba(255,120,50,0.25)",
       },
       keyframes: {
         "accordion-down": {
@@ -95,10 +96,15 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "fade-up": {
+          from: { opacity: "0", transform: "translateY(24px)" },
+          to: { opacity: "1", transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "fade-up": "fade-up 0.6s ease-out forwards",
       },
     },
   },
