@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Plus Jakarta Sans";
+  src: url("/assets/fonts/PlusJakartaSans.woff2") format("woff2");
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Light mode */
+    --background: 0.96 0.008 245;
+    --foreground: 0.18 0.03 245;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.03 245;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.03 245;
+    --primary: 0.75 0.12 195;
+    --primary-foreground: 0.1 0.025 245;
+    --secondary: 0.92 0.015 245;
+    --secondary-foreground: 0.18 0.03 245;
+    --muted: 0.92 0.012 245;
+    --muted-foreground: 0.5 0.02 245;
+    --accent: 0.75 0.12 195;
+    --accent-foreground: 0.1 0.025 245;
+    --destructive: 0.58 0.22 29;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.85 0.015 245;
+    --input: 0.88 0.012 245;
+    --ring: 0.75 0.12 195;
+    /* News specific */
+    --news-teal: 0.75 0.12 195;
+    --news-header: 0.96 0.01 245;
+    --news-card: 1 0 0;
+    --news-card-border: 0.85 0.015 245;
+    --news-badge-red: 0.58 0.22 29;
+    /* sidebar */
+    --sidebar: 0.96 0.008 245;
+    --sidebar-foreground: 0.18 0.03 245;
+    --sidebar-primary: 0.75 0.12 195;
+    --sidebar-primary-foreground: 0.1 0.025 245;
+    --sidebar-accent: 0.92 0.015 245;
+    --sidebar-accent-foreground: 0.18 0.03 245;
+    --sidebar-border: 0.85 0.015 245;
+    --sidebar-ring: 0.75 0.12 195;
+    --chart-1: 0.646 0.222 41.116;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+  }
+
+  .dark {
+    /* Page bg: deep blue/charcoal #0B1220 */
+    --background: 0.115 0.028 248;
+    /* Foreground: near-white #EAF0F6 */
+    --foreground: 0.93 0.018 245;
+    /* Card: dark slate #1F2F3C */
+    --card: 0.22 0.033 245;
+    --card-foreground: 0.93 0.018 245;
+    --popover: 0.22 0.033 245;
+    --popover-foreground: 0.93 0.018 245;
+    /* Primary: teal #23C6C8 */
+    --primary: 0.75 0.12 195;
+    --primary-foreground: 0.1 0.025 248;
+    /* Secondary */
+    --secondary: 0.22 0.033 245;
+    --secondary-foreground: 0.93 0.018 245;
+    /* Muted */
+    --muted: 0.18 0.028 245;
+    --muted-foreground: 0.68 0.025 245;
+    /* Accent: teal */
+    --accent: 0.75 0.12 195;
+    --accent-foreground: 0.1 0.025 248;
+    /* Destructive */
+    --destructive: 0.58 0.22 29;
+    --destructive-foreground: 0.985 0 0;
+    /* Border #2A3A48 */
+    --border: 0.27 0.03 245;
+    --input: 0.21 0.033 245;
+    --ring: 0.75 0.12 195;
+    /* News specific */
+    --news-teal: 0.75 0.12 195;
+    --news-header: 0.18 0.03 245;
+    --news-card: 0.22 0.033 245;
+    --news-card-border: 0.27 0.03 245;
+    --news-badge-red: 0.58 0.22 29;
+    /* sidebar */
+    --sidebar: 0.18 0.03 245;
+    --sidebar-foreground: 0.93 0.018 245;
+    --sidebar-primary: 0.75 0.12 195;
+    --sidebar-primary-foreground: 0.1 0.025 248;
+    --sidebar-accent: 0.22 0.033 245;
+    --sidebar-accent-foreground: 0.93 0.018 245;
+    --sidebar-border: 0.27 0.03 245;
+    --sidebar-ring: 0.75 0.12 195;
+    --chart-1: 0.488 0.243 264.376;
+    --chart-2: 0.696 0.17 162.48;
+    --chart-3: 0.769 0.188 70.08;
+    --chart-4: 0.627 0.265 303.9;
+    --chart-5: 0.645 0.246 16.439;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", "Inter", system-ui, sans-serif;
+  }
+}
